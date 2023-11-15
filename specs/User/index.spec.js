@@ -16,6 +16,7 @@ describe('user', () => {
         test('Пользователь существует', async () =>{
             const res = await user.signup(config.credentials)
             expect(res.status == 200 || res.status == 406).toBe(true)
+            //swagger возвращает 406, если пользователь существует
         })
 
         test('Авторизация должна проходить успешно с правильным логином и паролем', async () => {
